@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Product - The Only Product You Need</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-gem"></i>
+                Amazing Product
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav">
+                <a href="#product"><i class="fas fa-box"></i> Product</a>
+                <a href="#features"><i class="fas fa-star"></i> Features</a>
+                <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="./cart/cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-notification" id="cartNotification">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="product-gallery">
+            <div class="main-image-container">
+                <img src="./media/image1.jpeg" alt="Amazing Product" class="main-image" id="mainImage">
+                <div class="image-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="thumbnail-container">
+                <img src="./media/images2.jpg" alt="Product Thumbnail 1" class="thumbnail active" onclick="changeImage(this, './media/images2.jpg')">
+                <img src="./media/images2.jpg" alt="Product Thumbnail 2" class="thumbnail" onclick="changeImage(this, './media/images2.jpg')">
+                <img src="/api/placeholder/80/80" alt="Product Thumbnail 3" class="thumbnail" onclick="changeImage(this, './media/image1.jpeg')">
+                <img src="/api/placeholder/80/80" alt="Product Thumbnail 4" class="thumbnail" onclick="changeImage(this, './media/images2.jpg')">
+            </div>
+        </div>
+        <div class="product-details">
+            <span class="product-badge">New Arrival</span>
+            <h1 class="product-title">The Amazing Product</h1>
+            <div class="product-meta">
+                <div class="product-price">$99.99</div>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(4.5/5)</span>
+                </div>
+            </div>
+            <p class="product-description">
+                Experience the power of innovation with our Amazing Product. Designed to simplify your life and exceed your expectations, this is the only product you'll ever need. Multiple views showcase its versatility and quality craftsmanship.
+            </p>
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button onclick="changeQuantity(-1)"><i class="fas fa-minus"></i></button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button onclick="changeQuantity(1)"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+            
+            <div class="features">
+                <h2>Why Choose Amazing Product?</h2>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div>
+                            <h3>Premium Quality</h3>
+                            <p>Crafted with the finest materials for durability and performance.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div>
+                            <h3>Innovative Design</h3>
+                            <p>Cutting-edge technology meets sleek, user-friendly design.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div>
+                            <h3>Eco-Friendly</h3>
+                            <p>Sustainably produced with minimal environmental impact.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> support@amazingproduct.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Amazing Product. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
