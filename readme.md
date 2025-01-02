@@ -59,4 +59,12 @@ Backend additions:
 - Order history
 - Admin panel
 
+## Setup
+1. Clone the repository
+2. Copy `apiKeys.example.js` to `apiKeys.js`
+3. Add your Google Maps API key to `apiKeys.js`
+4. Open index.html in your browser
+
+Note: Never commit your `apiKeys.js` file! It contains sensitive information.
+
 

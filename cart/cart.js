@@ -1,7 +1,7 @@
 // Cart functionality
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-export function addToCart(product) {
+function addToCart(product) {
     cart.push(product);
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartDisplay();
@@ -125,6 +125,7 @@ function checkout() {
         return;
     }
     
+    window.location.href = '../checkout/checkout.html';
     showToastNotification('Thank you for your purchase! 🎉');
     cart = [];
     localStorage.setItem('cart', JSON.stringify(cart));
