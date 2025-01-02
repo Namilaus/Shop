@@ -1,4 +1,5 @@
 # My Online Store Project 
+- [DEMO](http://34.29.7.84/)
 - Note: Frontend is created by cursor(mostly), backend is going to be created by me.
 - This is just the frontend part of my online store project! Backend coming soon...(Hopefully)
 
