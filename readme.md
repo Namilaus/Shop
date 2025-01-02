@@ -1,6 +1,6 @@
 # My Online Store Project 
--Note: Frontend is created by cursor(mostly), backend is going to be created by me.
--This is just the frontend part of my online store project! Backend coming soon...(Hopefully)
+- Note: Frontend is created by cursor(mostly), backend is going to be created by me.
+- This is just the frontend part of my online store project! Backend coming soon...(Hopefully)
 
 ## What it does so far 
 - Shows products with images
