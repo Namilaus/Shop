@@ -1,3 +1,5 @@
+import {productDetails} from '/data.js';
+
 function changeImage(thumbnail, newSrc) {
     const mainImage = document.getElementById('mainImage');
     mainImage.style.opacity = 0;
@@ -8,6 +10,36 @@ function changeImage(thumbnail, newSrc) {
     document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
     thumbnail.classList.add('active');
 }
+function getProductData(){
+    //set fotos
+    const foto4 = document.getElementById("thumbnail4");
+    const foto3 = document.getElementById("thumbnail3");
+    const foto2 = document.getElementById("thumbnail2");
+    const foto1 = document.getElementById("thumbnail1");
+    const fotoMain = document.getElementById("mainImage");
+    
+    // Set image sources
+    fotoMain.src = productDetails.mainImage;
+    foto1.src = productDetails.thumbnail1;
+    foto2.src = productDetails.thumbnail2;
+    foto3.src = productDetails.thumbnail3;
+    foto4.src = productDetails.thumbnail4;
+    
+    // Add click event listeners
+    foto1.addEventListener('click', () => changeImage(foto1, productDetails.thumbnail1));
+    foto2.addEventListener('click', () => changeImage(foto2, productDetails.thumbnail2));
+    foto3.addEventListener('click', () => changeImage(foto3, productDetails.thumbnail3));
+    foto4.addEventListener('click', () => changeImage(foto4, productDetails.thumbnail4));
+    
+    //set title and etc
+    document.getElementsByClassName("product-title")[0].textContent = productDetails.name;
+    document.getElementsByClassName("product-price")[0].textContent = productDetails.price + "$";
+    document.getElementsByClassName("product-description")[0].textContent = productDetails.description;
+}
+getProductData();
+
+
+
 
 function changeQuantity(change) {
     let quantityInput = document.getElementById('quantity');
