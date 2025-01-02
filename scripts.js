@@ -41,14 +41,6 @@ getProductData();
 
 
 
-function changeQuantity(change) {
-    let quantityInput = document.getElementById('quantity');
-    let newQuantity = parseInt(quantityInput.value) + change;
-    if (newQuantity >= 1) {
-        quantityInput.value = newQuantity;
-    }
-}
-
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -106,19 +98,9 @@ function addToCart(product) {
     showToastNotification('Product added to cart! 🛍️');
 }
 
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartDisplay();
-}
 
-function updateQuantity(index, change) {
-    if (cart[index].quantity + change >= 1) {
-        cart[index].quantity += change;
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartDisplay();
-    }
-}
+
+
 
 function updateCartDisplay() {
     const cartItems = document.getElementById('cartItems');
