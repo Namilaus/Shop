@@ -1,6 +1,6 @@
 const url = 'http://localhost:8000/google-api'
 const requestData = {
-    key: 'NaIus'
+    key: 'Your KEY (not API)'
 }
 
 // Create a promise that resolves with the API key
