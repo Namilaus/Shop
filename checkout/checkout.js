@@ -1,4 +1,4 @@
-import config from '../config.js';
+import config, { initConfig } from '../config.js';
 
 let autocomplete;
 let map;
@@ -73,14 +73,10 @@ function fillInAddress() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Load and display order summary
+document.addEventListener('DOMContentLoaded', async () => {
+    await initConfig();
     displayOrderSummary();
-
-    // Handle form submission
     document.getElementById('shippingForm').addEventListener('submit', handleSubmit);
-    
-    // Load Google Maps script with API key from config and error handling
     loadGoogleMapsScript();
 });
 
