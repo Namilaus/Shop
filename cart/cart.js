@@ -1,19 +1,11 @@
 // Cart functionality
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-function addToCart(product) {
-    cart.push(product);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartDisplay();
-    updateCartNotification();
-    showToastNotification('Product added to cart! 🛍️');
-}
 
 function removeFromCart(index) {
     cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartDisplay();
-    updateCartNotification();
 }
 
 function updateQuantity(index, change) {
@@ -21,7 +13,6 @@ function updateQuantity(index, change) {
         cart[index].quantity += change;
         localStorage.setItem('cart', JSON.stringify(cart));
         updateCartDisplay();
-        updateCartNotification();
     }
 }
 
@@ -69,19 +60,7 @@ function updateCartTotals(subtotal) {
     document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
 }
 
-function updateCartNotification() {
-    const notification = document.getElementById('cartNotification');
-    if (notification) {
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        notification.textContent = totalItems;
-        
-        if (totalItems > 0) {
-            notification.classList.add('active');
-        } else {
-            notification.classList.remove('active');
-        }
-    }
-}
+
 
 function showToastNotification(message) {
     // Remove existing toast if any
@@ -136,5 +115,4 @@ function checkout() {
 // Initialize cart display when page loads
 document.addEventListener('DOMContentLoaded', () => {
     updateCartDisplay();
-    updateCartNotification();
 }); 
